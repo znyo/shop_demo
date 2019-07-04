@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <base th:href="${#request.getContextPath() + '/'}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Simpla Admin</title>
     <!--                       CSS                       -->
@@ -36,13 +36,12 @@
     </div>
     <!-- End #logn-top -->
     <div id="login-content">
-        <form action="${pageContext.request.contextPath }/login"
-              method="post">
-            <div class="notification information png_bg">
+        <form action="/login" method="post">
+            <div th:if="${#request.getParameter('error') != null && #request.getParameter('error').equals('1')}" class="notification information png_bg">
                 <div>用户名或者密码错误</div>
             </div>
             <p>
-                <label>邮箱</label> <input class="text-input" name="email"
+                <label>用户名</label> <input class="text-input" name="username"
                                          type="text" />
             </p>
             <div class="clear"></div>

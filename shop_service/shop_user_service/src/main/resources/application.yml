@@ -15,3 +15,5 @@ dubbo:
     name: dubbo
 server:
   port: 9090
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml

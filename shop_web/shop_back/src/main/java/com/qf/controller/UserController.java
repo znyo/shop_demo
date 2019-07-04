@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -35,4 +36,18 @@ public class UserController {
         return "redirect:/buser/userlist";
 
     }
+    /**
+     * 修改职工的所属角色
+     *
+     */
+
+    @RequestMapping("/updaterole")
+    public String updateUserRole(Integer uid, Integer[] rid){
+
+  System.out.println("操作的用户：" + uid + "  添加的角色：" + Arrays.toString(rid));
+        backUserService.updateUserRoles(uid, rid);
+
+        return "redirect:/buser/userlist";
+    }
+
 }
