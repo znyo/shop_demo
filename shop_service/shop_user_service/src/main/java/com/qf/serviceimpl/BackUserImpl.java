@@ -52,6 +52,12 @@ public class BackUserImpl implements IBackUserService {
         return 1;
     }
 
+    /**
+     * 用户登录
+     * @param username
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         BackUser backUser = backUserMapper.queryByUserName(username);

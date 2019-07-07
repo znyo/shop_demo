@@ -104,7 +104,7 @@
                         html+="<input type='checkbox' name='rid' value='"+data[i].id+"' />"+ data[i].rolename + "<br/>";
                     }
                 }
-                $("#show_role_div").html(html);
+                $("#show_role_div").html(html);//角色的复选框
 
             },"json");
             $("#edit_role_div").dialog({
